@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王广成</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #c0392b, #d35400, #e67e22, #b8860b, #a0522d);
+            background-size: 400% 400%;
+            animation: fireEarthFlow 8s ease infinite;
+            font-family: "STZhongsong", "华文中宋", "Noto Serif SC", "SimSun", "宋体", "KaiTi", "楷体", "FangSong", "仿宋", "PingFang SC", "Microsoft YaHei", serif;
+        }
+
+        @keyframes fireEarthFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            25% {
+                background-position: 50% 0%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            75% {
+                background-position: 50% 100%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 80px;
+            border-radius: 32px;
+            background: rgba(139, 45, 20, 0.55);
+            box-shadow:
+                0 0 60px rgba(255, 120, 30, 0.7),
+                0 0 120px rgba(200, 80, 20, 0.5),
+                0 20px 50px rgba(120, 40, 10, 0.6),
+                inset 0 0 30px rgba(255, 180, 80, 0.25);
+            backdrop-filter: blur(4px);
+            border: 2px solid rgba(255, 150, 60, 0.5);
+            animation: glowPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%,
+            100% {
+                box-shadow:
+                    0 0 60px rgba(255, 120, 30, 0.7),
+                    0 0 120px rgba(200, 80, 20, 0.5),
+                    0 20px 50px rgba(120, 40, 10, 0.6),
+                    inset 0 0 30px rgba(255, 180, 80, 0.25);
+            }
+            50% {
+                box-shadow:
+                    0 0 90px rgba(255, 150, 40, 0.9),
+                    0 0 160px rgba(220, 100, 30, 0.7),
+                    0 20px 60px rgba(140, 50, 15, 0.7),
+                    inset 0 0 45px rgba(255, 200, 100, 0.4);
+            }
+        }
+
+        .name-text {
+            font-size: 120px;
+            font-weight: 900;
+            letter-spacing: 30px;
+            color: #ffd180;
+            text-shadow:
+                0 0 20px #ff6d00,
+                0 0 40px #e65100,
+                0 0 80px #bf360c,
+                0 0 120px #8b1a00,
+                3px 3px 0 #5d1a0a,
+                6px 6px 0 #3e0e04,
+                0 8px 30px rgba(180, 60, 10, 0.8);
+            user-select: none;
+            transition: transform 0.4s ease, text-shadow 0.4s ease;
+            cursor: default;
+            line-height: 1;
+        }
+
+        .name-text:hover {
+            transform: scale(1.06);
+            text-shadow:
+                0 0 30px #ffab40,
+                0 0 60px #ff6d00,
+                0 0 100px #d84315,
+                0 0 150px #a82000,
+                4px 4px 0 #6b1d0a,
+                8px 8px 0 #4a0e04,
+                0 10px 40px rgba(200, 70, 15, 0.9);
+        }
+
+        .spark {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkFloat 4s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes sparkFloat {
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateY(-35px) scale(1.6);
+                opacity: 1;
+            }
+        }
+
+        .spark:nth-child(1) {
+            width: 14px;
+            height: 14px;
+            background: #ff6f00;
+            top: -30px;
+            left: 15%;
+            animation-delay: 0s;
+            box-shadow: 0 0 18px #ff8f00, 0 0 35px #ff6f00;
+        }
+        .spark:nth-child(2) {
+            width: 10px;
+            height: 10px;
+            background: #ff8a00;
+            top: -20px;
+            right: 20%;
+            animation-delay: 1.2s;
+            box-shadow: 0 0 14px #ffa000, 0 0 28px #ff8a00;
+        }
+        .spark:nth-child(3) {
+            width: 8px;
+            height: 8px;
+            background: #ffab00;
+            bottom: -25px;
+            left: 35%;
+            animation-delay: 2.5s;
+            box-shadow: 0 0 12px #ffc107, 0 0 24px #ffab00;
+        }
+        .spark:nth-child(4) {
+            width: 12px;
+            height: 12px;
+            background: #e64a19;
+            bottom: -15px;
+            right: 25%;
+            animation-delay: 0.8s;
+            box-shadow: 0 0 16px #ff5722, 0 0 32px #e64a19;
+        }
+        .spark:nth-child(5) {
+            width: 6px;
+            height: 6px;
+            background: #ffb74d;
+            top: 40%;
+            left: -25px;
+            animation-delay: 3s;
+            box-shadow: 0 0 10px #ffcc80, 0 0 20px #ffb74d;
+        }
+        .spark:nth-child(6) {
+            width: 9px;
+            height: 9px;
+            background: #f57c00;
+            top: 35%;
+            right: -30px;
+            animation-delay: 1.8s;
+            box-shadow: 0 0 13px #ff9800, 0 0 26px #f57c00;
+        }
+
+        .earth-ring {
+            position: absolute;
+            width: 110%;
+            height: 110%;
+            border-radius: 50%;
+            border: 3px dashed rgba(210, 130, 50, 0.45);
+            top: -5%;
+            left: -5%;
+            animation: ringSpin 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes ringSpin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .name-text {
+                font-size: 60px;
+                letter-spacing: 15px;
+            }
+            .container {
+                padding: 40px 35px;
+                border-radius: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="earth-ring"></div>
+        <span class="spark"></span>
+        <span class="spark"></span>
+        <span class="spark"></span>
+        <span class="spark"></span>
+        <span class="spark"></span>
+        <span class="spark"></span>
+        <span class="name-text">王广成</span>
+    </div>
+</body>
+</html>
